@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Nova</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="ui">
+        <header class="ui__header">
+            <h1 class="brand">Mario <span>Nova</span></h1>
+            <div class="header__meta">
+                <div class="meta__item">
+                    <span class="meta__label">Skor</span>
+                    <span id="score" class="meta__value">0000</span>
+                </div>
+                <div class="meta__item">
+                    <span class="meta__label">Zaman</span>
+                    <span id="timer" class="meta__value">0.0</span>
+                </div>
+                <div class="meta__item">
+                    <span class="meta__label">Enerji</span>
+                    <div class="energy">
+                        <div id="energyFill" class="energy__fill"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="ui__body">
+            <canvas id="game" width="960" height="540"></canvas>
+            <aside class="panel">
+                <h2 class="panel__title">Kontroller</h2>
+                <ul class="panel__list">
+                    <li><kbd>A</kbd>/<kbd>D</kbd> veya <kbd>←</kbd>/<kbd>→</kbd> – Hareket</li>
+                    <li><kbd>W</kbd>/<kbd>↑</kbd> veya <kbd>Boşluk</kbd> – Zıpla / Çift Zıpla</li>
+                    <li><kbd>Shift</kbd> – Sprint</li>
+                    <li><kbd>R</kbd> – Yeniden başlat</li>
+                </ul>
+                <p class="panel__info">Profesyonel olarak hazırlanmış Mario tarzı maceraya hoş geldin. Parlayan yıldızları topla, neon şehir silüetinin üzerinde koş!</p>
+                <button id="toggleHud" class="panel__button">HUD Gizle/Göster</button>
+            </aside>
+        </section>
+        <footer class="ui__footer">
+            <p>© 2024 Neon Pixel Studio · Hiper-modern Mario deneyimi</p>
+            <div class="footer__actions">
+                <button id="pauseBtn" class="btn">Duraklat</button>
+                <button id="resumeBtn" class="btn btn--primary">Devam Et</button>
+            </div>
+        </footer>
+    </div>
+    <div class="loading" id="loadingScreen">
+        <div class="loading__inner">
+            <span class="loading__logo">MN</span>
+            <p class="loading__text">Evren kuruluyor...</p>
+            <div class="loading__bar"><span></span></div>
+        </div>
+    </div>
+    <script src="assets/js/game.js" type="module"></script>
+</body>
+</html>
